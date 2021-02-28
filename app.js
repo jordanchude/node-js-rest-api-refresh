@@ -8,16 +8,17 @@ const PORT = 3000;
 
 
 // MIDDLEWARE
-
+const postsRoute = require('./routes/posts')
+app.use('/posts', postsRoute);
 
 // ROUTES
 app.get("/", (req, res) => {
     res.send('We are on home');
 })
 
-app.get("/posts", (req, res) => {
-    res.send('We are on posts');
-})
+// app.get("/posts", (req, res) => {
+//     res.send('We are on posts');
+// })
 
 // CONNECT TO DB
 mongoose.connect(process.env.DB_CONNECTION , {
